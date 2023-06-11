@@ -8,6 +8,7 @@ import Marquee from "react-fast-marquee";
 
 import { GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
 import app from '../../../firebase/firebase.config';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   const [user, setUser] = useState(null)
@@ -56,7 +57,9 @@ const Header = () => {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mx-auto">
-            <Nav.Link href="#features">Home</Nav.Link>
+              {/* <Link to='/'>Home</Link> */}
+
+            <Nav.Link  href="/">Home</Nav.Link>
             <Nav.Link href="#pricing">About</Nav.Link>
             <Nav.Link href="#pricing">Career</Nav.Link>
             
