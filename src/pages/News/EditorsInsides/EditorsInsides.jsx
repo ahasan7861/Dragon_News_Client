@@ -1,35 +1,11 @@
-import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react';
 import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 
-const LeftNav = () => {
-    const [categories, setCategories] = useState([]);
-
-    useEffect(() => {
-        fetch('http://localhost:5000/categories')
-        .then(res => res.json())
-        .then(data => setCategories(data))
-        .catch(error => console.error(error))
-    }, [])
-
-
+const EditorsInsides = () => {
     return (
-        <div className="mt-4">
-            <h4>All Category</h4>
-
-
-            <div className='ps-4'>
-            {
-                categories.map(categorie => <p key={categorie.id}>
-                    <Link to={`/category/${categorie.id}`} className='text-black text-decoration-none'>{categorie.name}</Link>
-                </p>)
-            }
-            </div>
-
-
-            <Row xs={1} md={1} className="g-4 mt-4">
+        <Row xs={1} md={2} lg={3} className="g-4 mt-4">
       
         <Col>
           <Card>
@@ -72,10 +48,7 @@ const LeftNav = () => {
         </Col>
       
     </Row>
-
-
-        </div>
     );
 };
 
-export default LeftNav;
+export default EditorsInsides;

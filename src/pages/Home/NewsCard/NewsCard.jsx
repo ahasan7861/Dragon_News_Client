@@ -48,7 +48,7 @@ const NewsCard = ({ news }) => {
             readOnly
           ></Rating>
 
-          <span>{rating?.number}</span>
+          <span> {rating?.number}</span>
         </div>
 
         <div>
